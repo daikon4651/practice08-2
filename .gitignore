@@ -1,0 +1,9 @@
+# ディレクトリ
+node_modules
+dist
+
+
+# ファイル
+.DS_Store
+Thumbs.db
+practice08-2.code-workspace
