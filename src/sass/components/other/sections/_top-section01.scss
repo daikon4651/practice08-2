@@ -1,0 +1,174 @@
+// セクション・トップページ・01
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as g;
+
+
+// 01
+.topSection01 {
+  --min-size: 140;
+  --max-size: 288;
+  position: relative;
+  margin-block-end: var(--clamp-size);
+
+  &__inner {
+    row-gap: 24px;
+  }
+
+  &__content {
+    display: contents;
+  }
+
+  &__heading {
+    grid-column: 2 / -2;
+  }
+
+  &__textWrapper {
+    order: 1;
+    grid-column: 2 / -4;
+  }
+
+  &__text {
+    --min-size: 14;
+    --max-size: 16;
+    --min-size02: 25;
+    --max-size02: 45;
+    margin-block-end: var(--clamp-size02);
+    font-size: var(--clamp-size);
+    min-height: 0vw;
+    line-height: 1.8;
+  }
+
+  &__figure01 {
+    grid-column: 1 / -2;
+    height: 399px;
+  }
+
+  &__image01 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: "object-fit: cover;";
+  }
+
+  &__figure02 {
+    grid-column: 4 / -1;
+    height: 173px;
+  }
+
+  &__image02 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: "object-fit: cover;";
+  }
+
+  // 装飾・グレーの背景の四角形
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0%;
+    right: 9.87%;
+    top: 36.93%;
+    bottom: -5.72%;
+    z-index: -1;
+    background-color: g.$lightBaseColor;
+  }
+
+  // 装飾・三角形
+  &::after {
+    --min-size: 47;
+    --max-size: 61;
+    content: url(/images/common/accent.svg);
+    width: var(--clamp-size);
+    position: absolute;
+    left: 38.4%;
+    bottom: -14.51%;
+    transform: rotate(137deg);
+    line-height: 0;
+  }
+
+
+  @include g.mq('md-min') {
+    margin-block-start: g.$size1 * -1;
+
+    &__inner {
+      margin-inline: g.$size1 g.$size2;
+      grid-template-columns:
+       g.$size2 630fr 377fr;
+      grid-template-rows:
+        repeat(3, auto);
+      column-gap: g.$halfSize;
+      row-gap: normal;
+      grid-template-areas:
+        ". figure01 ."
+        "headingNum headingText figure02"
+        ". textWrapper figure02";
+
+      // 装飾・三角形
+      &::after {
+        --min-size: 47;
+        --max-size: 100;
+        content: url(/images/common/accent.svg);
+        width: var(--clamp-size);
+        position: absolute;
+        left: 71.79%;
+        bottom: 65.75%;
+        // top: 27.26%;
+        transform: rotate(-153deg);
+        line-height: 0;
+      }
+    }
+
+    &__heading {
+      display: contents;
+
+      &Num {
+        grid-area: headingNum;
+        align-self: baseline;
+      }
+
+      &Text {
+        grid-area: headingText;
+        align-self: baseline;
+        margin-block: g.$size1 g.$halfSize;
+      }
+    }
+
+    &__textWrapper {
+      grid-area: textWrapper;
+    }
+
+    &__text {
+      max-width: 29em;
+    }
+
+    &__figure01 {
+      grid-area: figure01;
+      height: auto;
+      aspect-ratio: 630 / 792;
+    }
+
+    &__figure02 {
+      grid-area: figure02;
+      height: auto;
+      margin-block-start: -34px;
+    }
+
+    // 装飾・グレーの背景の四角形
+    &::before {
+      left: 0%;
+      right: 15%;
+      top: 30.75%;
+      bottom: -8.02%;
+    }
+
+    // 装飾・三角形
+    &::after {
+      left: 10.05%;
+      bottom: -12.53%;
+      transform: rotate(151deg);
+    }
+  }
+}

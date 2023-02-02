@@ -1,0 +1,12 @@
+// レイアウト・CSSグリッド
+
+
+// 変数、ミックスイン、関数
+@use "../global/_index.scss" as g;
+
+
+.gridContainer {
+  display: grid;
+  grid-template-columns:
+    repeat(3, g.$size1) auto repeat(3, g.$size1);
+}

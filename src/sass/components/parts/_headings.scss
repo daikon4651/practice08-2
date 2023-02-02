@@ -3,3 +3,39 @@
 
 // 変数、ミックスイン、関数
 @use "../../global" as g;
+
+
+// 見出し
+.primaryHeading {
+
+  &__num {
+    font-family: 'Lora', serif;
+    font-size: 103px;
+    font-weight: 400;
+    background: linear-gradient(0.96deg, g.$textColor 0.35%, #A2CF4F 182.75%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__text {
+    --min-size: 26;
+    --max-size: 42;
+    font-family: 'Noto Serif JP', serif;
+    font-size: var(--clamp-size);
+    min-height: 0vw;
+    font-weight: 500;
+    line-height: 1.5;
+    color: g.$textColor;
+  }
+
+
+  @include g.mq {
+
+    &__num {
+      --min-viewport: 768;
+      --min-size: 60;
+      --max-size: 103;
+      font-size: var(--clamp-size);
+    }
+  }
+}

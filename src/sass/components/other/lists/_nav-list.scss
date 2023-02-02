@@ -1,0 +1,21 @@
+// リスト・ナビゲーション
+
+
+// 変数、ミックスイン、関数
+@use "../../../global/index.scss" as g;
+
+
+// メニュー
+.navList {
+  --min-size: 14;
+  --max-size: 18;
+  display: flex;
+  justify-content: center;
+  column-gap: 2em;
+  font-size: var(--clamp-size);
+  min-height: 0vw;
+
+  &__item {
+    color: g.$whiteColor;
+  }
+}

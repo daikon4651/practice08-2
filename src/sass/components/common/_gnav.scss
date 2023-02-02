@@ -2,4 +2,78 @@
 
 
 // 変数、ミックスイン、関数
-@use "../../global" as g;
+@use "../../global/index.scss" as g;
+
+
+// ボタン
+.gNavBtn {
+  all: unset;
+  z-index: 3;
+  outline: revert;
+  -webkit-tap-highlight-color: transparent;
+  width: max(46px, g.$size1);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  color: g.$baseColor;
+  cursor: pointer;
+
+  .is-gNavOpen & {
+    color: #fff;
+  }
+
+  &__bar,
+  &::before,
+  &::after {
+    content: "";
+    grid-area: 1 / 1;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transition: transform 0.5s;
+  }
+
+  &::before {
+    transform: translateY(-12px);
+
+    .is-gNavOpen & {
+      transform: translateY(0) rotate(45deg);
+    }
+  }
+
+  &::after {
+    transform: translateY(12px);
+
+    .is-gNavOpen & {
+      transform: translateY(0) rotate(-45deg);
+    }
+  }
+
+  .is-gNavOpen &__bar {
+    transform: scale(0);
+  }
+}
+
+
+
+// メニュー
+.gNav {
+  position: fixed;
+  inset: 0 -100% 0 100%;
+  z-index: 2;
+  background: linear-gradient(0.96deg, rgba(84, 96, 63, 0.9) 0.35%, rgba(162, 207, 79, 0.9) 182.75%);
+  transition: transform 0.5s;
+
+  .is-gNavOpen & {
+    transform: translate(-100%, 0);
+  }
+}
+
+
+
+// ページがスクロールされないようにする。
+.is-gNavOpen body {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}

@@ -1,0 +1,12 @@
+// パーツ・ロゴ
+
+
+// 変数、ミックスイン、関数
+@use "../../global" as g;
+
+
+.logo {
+  --min-size: 120;
+  --max-size: 200;
+  width: var(--clamp-size);
+}

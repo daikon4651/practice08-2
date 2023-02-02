@@ -1,0 +1,15 @@
+// レイアウト・Flexbox・フレキシブルボックスレイアウト
+
+
+// 変数、ミックスイン、関数
+@use "../global/_index.scss" as g;
+
+
+// 上下左右中央に配置
+.l-flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 44px;
+}

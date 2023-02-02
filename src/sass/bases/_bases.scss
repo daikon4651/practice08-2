@@ -1,0 +1,41 @@
+// ベース
+
+// 変数、ミックスイン、関数
+@use "../global/" as g;
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: g.$textColor;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration-line: none;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}

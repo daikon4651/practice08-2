@@ -3,3 +3,16 @@
 
 // 変数、ミックスイン、関数
 @use "../../global" as g;
+
+
+// More
+.moreLink {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  &::after {
+    content: url(/images/common/more.svg);
+    margin-inline-start: 24px;
+  }
+}

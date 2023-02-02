@@ -1,0 +1,42 @@
+// 変数
+
+
+// ビルトインモジュール
+@use 'sass:math';
+
+
+// カラー
+$baseColor: #96A199;
+$lightBaseColor: #E9ECE8;
+$accentColor: #B75865;
+$textColor: #54603F;
+$whiteColor: #fff;
+
+
+// サイズ
+$size1: 5vw;
+$size2: $size1 * 2;
+$size3: $size1 * 3;
+$size4: $size1 * 4;
+$halfSize: math.div($size1, 2);
+
+
+
+// 幅
+
+
+// ブレイクポイント
+$breakpoints: (
+  'xs-min': '(min-width: 375px)',
+  'xs-max': '(max-width: 374px)',
+  'sm-min': '(min-width: 600px)',
+  'sm-max': '(max-width: 599px)',
+  'md-min': '(min-width: 768px)',
+  'md-max': '(max-width: 767px)',
+  'lg-min': '(min-width: 1024px)',
+  'lg-max': '(min-width: 1023px)',
+  'xl-min': '(min-width: 1200px)',
+  'xl-max': '(max-width: 1199px)',
+  'xxl-min': '(min-width: 1366px)',
+  'xxl-max': '(max-width: 1365px)'
+);

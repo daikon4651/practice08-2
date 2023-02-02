@@ -1,0 +1,152 @@
+// セクション・トップページ・03
+
+
+// 変数、ミックスイン、関数
+@use "../../../global/" as g;
+
+
+.topSection03 {
+  position: relative;
+  row-gap: 44px;
+
+  > * {
+    grid-column: 2 / -2;
+  }
+
+  &__heading {
+    margin-block-end: 24px;
+  }
+
+  &__text {
+    --min-size: 14;
+    --max-size: 16;
+    font-size: var(--clamp-size);
+    min-height: 0vw;
+    line-height: 1.8;
+    text-align: justify;
+    text-justify: inter-ideograph;
+  }
+
+  &__figures {
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+  }
+
+  &__figure {
+
+    &Link {
+      display: block;
+    }
+
+    &Image {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      font-family: "object-fit: cover;";
+      margin-block-end: 12px;
+    }
+
+    &Heading {
+      --min-size: 16;
+      --max-size: 18;
+      font-size: var(--clamp-size);
+      min-height: 0vw;
+      font-weight: 400;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 30.12%;
+    bottom: 13.63%;
+    z-index: -1;
+    background-color: g.$lightBaseColor;
+  }
+
+  &::after {
+    --min-size: 47;
+    --max-size: 61;
+    content: url(/images/common/accent.svg);
+    width: var(--clamp-size);
+    position: absolute;
+    right: 64.25%;
+    bottom: -4.81%;
+    transform: rotate(164deg);
+  }
+
+
+  @include g.mq {
+
+    &__content {
+      display: grid;
+      grid-template-columns:
+        g.$size2 1fr;
+      grid-template-rows:
+        repeat(2, auto);
+      grid-template-areas:
+        "headingNum headingText"
+        ". text";
+      gap: g.$halfSize;
+    }
+
+    &__heading {
+      display: contents;
+
+      &Num {
+        grid-area: headingNum;
+        align-self: baseline;
+      }
+
+      &Text {
+        grid-area: headingText;
+        align-self: baseline;
+      }
+    }
+
+    &__text {
+      grid-area: text;
+      max-width: 34em;
+    }
+  }
+
+
+  @include g.mq('lg-min') {
+
+    &__figures {
+      flex-direction: row;
+      justify-content: space-evenly;
+      column-gap: 36px;
+    }
+
+    &__figure {
+      flex: 1;
+      max-width: 335px;
+
+      &:nth-child(2) {
+        align-self: center;
+      }
+
+      &:last-child {
+        margin-block-start: 280px;
+      }
+    }
+
+    &::before {
+      left: 0%;
+      right: 0%;
+      top: 33.61%;
+      bottom: 10.37%;
+    }
+
+    &::after {
+      --max-size: 80;
+      right: 65.56%;
+      bottom: 4.85%;
+      transform: rotate(138deg);
+    }
+  }
+}

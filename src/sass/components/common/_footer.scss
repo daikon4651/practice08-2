@@ -1,5 +1,11 @@
-// フッター
+// 共通・フッター
 
 
 // 変数、ミックスイン、関数
-@use "../../global" as g;
+@use "../../global/_index.scss" as g;
+
+
+.footer {
+  padding-block: 100px;
+  background-color: g.$baseColor;
+}

@@ -1,0 +1,145 @@
+// セクション・トップページ・02
+
+
+// 変数、ミックスイン・関数
+@use "../../../global/_index.scss" as g;
+
+
+.topSection02 {
+  position: relative;
+  --min-size: 140;
+  --max-size: 288;
+  margin-block-end: var(--clamp-size);
+  row-gap: 24px;
+
+  &__content {
+    display: contents;
+  }
+
+  &__heading {
+    grid-column: 2 / -2;
+    text-align: right;
+  }
+
+  &__textWrapper {
+    grid-column: 4 / -2;
+    order: 1;
+  }
+
+  &__text {
+    --min-size: 14;
+    --max-size: 16;
+    --min-size02: 25;
+    --max-size02: 45;
+    margin-block-end: var(--clamp-size02);
+    font-size: var(--clamp-size);
+    min-height: 0vw;
+    line-height: 1.8;
+  }
+
+  &__figure01 {
+    grid-column: 2 / -1;
+    height: 399px;
+  }
+
+  &__image01 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: "object-fit: cover;";
+  }
+
+  &__figure02 {
+    grid-column: 1 / -4;
+    height: 173px;
+  }
+
+  &__image02 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: "object-fit: cover;";
+  }
+
+  // 装飾・グレーの背景の四角形
+  &::before {
+    content: "";
+    position: absolute;
+    left: 9.87%;
+    right: 0%;
+    top: 34.55%;
+    bottom: -5.81%;
+    z-index: -1;
+    background-color: g.$lightBaseColor;
+  }
+
+  // 装飾・三角形
+  &::after {
+    --min-size: 47;
+    --max-size: 61;
+    content: url(/images/common/accent.svg);
+    width: var(--clamp-size);
+    position: absolute;
+    right: 19.23%;
+    bottom: -14.85%;
+    transform: rotate(-159deg);
+    line-height: 0;
+  }
+
+
+  @include g.mq('md-min') {
+
+    margin-inline-start: g.$size1;
+    grid-template-columns:
+      540fr 684fr;
+    grid-template-rows:
+      repeat(2, auto);
+    grid-template-areas:
+      "figure01 figure01"
+      "figure02 content";
+    gap: g.$size1;
+
+    &__content {
+      display: block;
+      grid-area: content;
+      margin-inline-end: g.$size1;
+    }
+
+    &__heading {
+      text-align: start;
+
+      &Text {
+        margin-block: g.$halfSize;
+      }
+    }
+
+    &__text {
+      max-width: 29em;
+    }
+
+    &__figure01 {
+      grid-area: figure01;
+      margin-inline-start: g.$size2;
+      height: auto;
+      aspect-ratio: 1224 / 731;
+    }
+
+    &__figure02 {
+      grid-area: figure02;
+      height: auto;
+    }
+
+    &::before {
+      left: 32.64%;
+      right: 0%;
+      top: -7.29%;
+      bottom: -7.29%;
+    }
+
+    &::after {
+      right: 32.29%;
+      bottom: -17.24%;
+      transform: rotate(-139deg);
+    }
+  }
+}

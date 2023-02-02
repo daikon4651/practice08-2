@@ -1,0 +1,51 @@
+// CTA
+
+
+// 変数、ミックスイン、関数
+@use "../../../global/_index.scss" as g;
+
+
+.cta {
+  padding-block: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+
+  &__linkWrapper {
+    --min-size: 20;
+    --max-size: 36;
+    display: flex;
+    font-size: var(--clamp-size);
+
+    &::before,
+    &::after {
+      width: 2em;
+      margin-block-start: -1em;
+    }
+
+    &::before {
+      content: url(/images/common/bars-left.svg);
+    }
+
+    &::after {
+      content: url(/images/common/bars-right.svg);
+    }
+  }
+
+  &__link {
+    padding: 1em;
+    border-radius: 2em;
+    background-color: g.$accentColor;
+    color: g.$whiteColor;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 500;
+  }
+
+  &__text {
+    --min-size: 14;
+    --max-size: 16;
+    font-size: var(--clamp-size);
+    min-height: 0vw;
+  }
+}
