@@ -6,4 +6,5 @@ dist
 # ファイル
 .DS_Store
 Thumbs.db
-practice08-2.code-workspace
+package-lock.json
+*.code-workspace

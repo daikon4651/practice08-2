@@ -34,7 +34,7 @@
 
 
 
-// フォントサイズ（rem）
+// フォントサイズ（ rem ）
 @mixin fz($size: 18, $root: 16) {
   font-size: math.div($size, $root) * 1rem;
   // font-size: calc($size / $root * 1rem);
@@ -42,6 +42,7 @@
 
 
 
+// マウスオーバー
 @mixin hover() {
   &:hover {
     @content;
